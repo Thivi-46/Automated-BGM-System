@@ -1,8 +1,8 @@
 body{
-    background: linear-gradient(135deg,#0F172A,#1E3A8A,#312E81);
+    background:linear-gradient(135deg,#0F172A,#1E3A8A,#312E81);
     min-height:100vh;
-    color:white;
     font-family:Arial, Helvetica, sans-serif;
+    color:#ebe5e5;
 }
 
 .hero{
@@ -46,4 +46,113 @@ body{
 
 .btn-primary{
     border-radius:30px;
+}
+ 
+.login-card{
+    width:420px;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(17,24,39,0.75);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        0 0 25px rgba(99,102,241,.2);
+}
+
+.login-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.login-card h2{
+    color:#ffffff;
+    text-align:center;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.login-card .form-control{
+    height:52px;
+    border-radius:12px;
+    background:rgb(255, 255, 255);
+    border:1px solid rgba(255,255,255,.15);
+    color:#111827;
+}
+
+.login-card .form-control:focus{
+    background:rgba(255,255,255,.12);
+    border-color:#7c3aed;
+    box-shadow:0 0 12px rgba(124,58,237,.35);
+    color:#ffffff;
+}
+.login-btn{
+    width:100%;
+    height:52px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#7c3aed,#3b82f6);
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(59,130,246,.4);
+}
+
+.login-card .form-control::placeholder{
+    color:#9ca3af;
+}
+.login-card .form-label{
+    color:#e5e7eb;
+    font-weight:500;
+}
+
+.login-card a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.login-card a:hover{
+    color:#ffffff;
+}
+
+.login-card:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+}
+.input-group-text{
+    background:rgba(255,255,255,0.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.input-group .form-control{
+    border-left:none;
+}
+
+.input-group-text{
+    border-right:none;
+}
+.login-logo{
+    width:90px;
+    height:90px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.3);
+}
+
+.login-logo i{
+    font-size:48px;
+    color:#3b82f6;
 }
