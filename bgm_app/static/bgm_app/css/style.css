@@ -52,6 +52,7 @@ body{
     width:420px;
     padding:40px;
     border-radius:20px;
+    margin-top:-30px;
     background:rgba(17,24,39,0.75);
     backdrop-filter:blur(18px);
     border:1px solid rgba(255,255,255,.12);
@@ -65,9 +66,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:40px;
+    padding:40px 0;
 }
-
 .login-card h2{
     color:#ffffff;
     text-align:center;

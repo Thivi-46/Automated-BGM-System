@@ -5,3 +5,6 @@ def home(request):
 
 def login(request):
     return render(request, "bgm_app/login.html")
+
+def register(request):
+    return render(request, "bgm_app/register.html")
