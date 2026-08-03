@@ -2,9 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth.decorators import login_required
+from .forms import VideoForm
 
 def home(request):
     return render(request, "bgm_app/home.html")
+
+@login_required
+def dashboard(request):
+    return render(request, "bgm_app/dashboard.html")
 
 def login(request):
 
@@ -25,7 +31,7 @@ def login(request):
 
             messages.success(request, "Login Successful!")
 
-            return redirect("home")
+            return redirect("dashboard")
 
         else:
 
@@ -85,3 +91,28 @@ def logout(request):
     messages.success(request, "Logged out successfully.")
 
     return redirect("login")
+
+@login_required
+def upload(request):
+
+    if request.method == "POST":
+
+        form = VideoForm(request.POST, request.FILES)
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(request, "Video uploaded successfully!")
+
+            return redirect("dashboard")
+
+    else:
+
+        form = VideoForm()
+
+    return render(
+        request,
+        "bgm_app/upload.html",
+        {"form": form}
+    )

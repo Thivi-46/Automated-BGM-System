@@ -1,0 +1,67 @@
+{% extends 'bgm_app/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% include 'bgm_app/navbar.html' %}
+
+<div class="container mt-5">
+
+   <h2 class="text-white">
+    Welcome, {{ request.user.first_name }} 👋
+</h2>
+
+<p style="color:#d1d5db;">
+    Automated BGM Management System Dashboard
+</p>
+
+    <hr>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+
+            <div class="card p-4 shadow-sm bg-dark text-white border-0">
+
+                <h4>🎥 Upload Video</h4>
+
+                <p>Upload your video for AI-powered BGM recommendation.</p>
+
+                <a href="#" class="btn btn-primary">
+                    Upload
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card p-4 shadow-sm">
+
+                <h4>🎼 My Projects</h4>
+
+                <p>View your previously generated BGM projects.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card p-4 shadow-sm">
+
+                <h4>📜 History</h4>
+
+                <p>Check your recent activities.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

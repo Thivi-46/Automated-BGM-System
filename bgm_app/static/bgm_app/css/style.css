@@ -156,3 +156,24 @@ body{
     font-size:48px;
     color:#3b82f6;
 }
+
+.card{
+    background: rgba(20,30,60,.75) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.08) !important;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
+
+.card h4{
+    color: white;
+}
+
+.card p{
+    color: #d1d5db;
+}

@@ -1,0 +1,41 @@
+{% extends 'bgm_app/base.html' %}
+
+{% block title %}Upload Video{% endblock %}
+
+{% block content %}
+
+{% include 'bgm_app/navbar.html' %}
+
+<div class="container mt-5">
+
+    <div class="login-card mx-auto">
+
+        <h2 class="text-center mb-4">
+            Upload Video
+        </h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div class="mb-3">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+
+    <div class="mb-4">
+        {{ form.video.label_tag }}
+        {{ form.video }}
+    </div>
+
+    <button type="submit" class="login-btn">
+        Upload Video
+    </button>
+
+</form>
+
+    </div>
+
+</div>
+
+{% endblock %}
