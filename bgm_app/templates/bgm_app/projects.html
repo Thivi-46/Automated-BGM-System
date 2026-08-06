@@ -1,0 +1,62 @@
+{% extends 'bgm_app/base.html' %}
+
+{% block title %}My Projects{% endblock %}
+
+{% block content %}
+
+{% include 'bgm_app/navbar.html' %}
+
+<div class="container mt-5">
+
+    <h2 class="text-white mb-4">
+        🎼 My Projects
+    </h2>
+
+    <div class="row">
+
+        {% for video in videos %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card bg-dark text-white shadow h-100">
+
+                <div class="card-body">
+
+                    <h5>{{ video.title }}</h5>
+
+                    <p class="text-light">
+                        Uploaded on:<br>
+                        {{ video.uploaded_at }}
+                    </p>
+
+                    <a href="{{ video.video.url }}"
+                       target="_blank"
+                       class="btn btn-primary btn-sm">
+                        ▶ View Video
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="alert alert-warning">
+
+                No videos uploaded yet.
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

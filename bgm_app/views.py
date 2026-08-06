@@ -116,3 +116,46 @@ def upload(request):
         "bgm_app/upload.html",
         {"form": form}
     )
+
+from .models import Video
+
+@login_required
+def upload_video(request):
+
+    if request.method == "POST":
+
+        form = VideoForm(request.POST, request.FILES)
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(request, "Video uploaded successfully!")
+
+            return redirect("dashboard")
+
+    else:
+
+        form = VideoForm()
+
+    return render(
+        request,
+        "bgm_app/upload.html",
+        {
+            "form": form
+        }
+    )
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def projects(request):
+
+    videos = Video.objects.all()
+    return render(
+        request,
+        "bgm_app/projects.html",
+        {
+            "videos": videos
+        }
+    )
